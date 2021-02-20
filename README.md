@@ -1,7 +1,13 @@
-This repository is a test toolbox for Scilab. It requires "thirdparty" directory which can be downloaded as "external-library.zip" file from the page: https://scilab.in/fossee-scilab-toolbox. The "thirdparty" directory contains compiled library for a simple "multiplication" function written in C. After copying the "thirdparty" directory to the toolbox directory, on the scilab console run "exec builder.sce" to build the toolbox and then run "exec loader.sce" to load the toolbox.  Type "help" in the scilab console and browse through the help content of "test_toolbox". The external-library.zip file also contains separate instructions to work with MinGW on Windows OS.
-
-This toolbox overall demonstrates
-1. How to add a function defined in C in scilab
-2. How to add a function defined in Scilab in Scilab
-3. How to write help for the added functions
-4. How to create a toolbox out of the above functions.
+This repository uses the test toolbox for scilab to add a function to transpose a double type matrix. To use the transpose function the user needs the thirdparty folder which contains a compiled library for "transpose()" function written in C. The thirdparty folder is a part of this repository. The following steps need to be followed in order to build, load and execute the transpose() function in scilab 6.1.0 console:
+1. In scilab console go to File>Browse for new.
+2. Select the directory containing this repository.
+3. Now run the following commands to build and load this toolbox in the console:
+	a. exec builder.sce (ignore any warnings and select create anyway)
+	b. exec loader.sce
+4. Now the toolbox is ready to be used for transposing matrices, e.g., 
+	x = [2, 5, 0, 9;
+	   3, 8, 7, 11] (initializing a 2x4 matrix)
+	y = transpose(x) (assigns to y, a 4x2 matrix which is the transpose of x)
+Note: The software specifications are:
+	-> OS : Ubuntu 18.04 lts
+	-> Scilab 6.1.0
