@@ -1,8 +1,8 @@
 # All back up files
 *.*~
+*.bin
 *.lib
 *.exe
 *.la
 *.out
 *.o
-

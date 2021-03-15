@@ -7,7 +7,6 @@
 // http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
 // Author: Rupak Rokade
 // Organization: FOSSEE, IIT Bombay
-//Edited By: Abhishek Bhatt for the purpose of the FOSSEE screening task
 
 mode(-1)
 lines(0)
@@ -41,7 +40,7 @@ if getos()=="Windows" then
     inc_base_dir = third_dir + filesep() + 'windows' + filesep() + 'include';
     C_Flags=['-D__USE_DEPRECATED_STACK_FUNCTIONS__  -I -w '+path_builder+' '+ '-I '+inc_base_dir+' ']   
     Linker_Flag  = "";
-		libs  = [lib_base_dir+"libmul"];
+		libs  = [lib_base_dir+"libtrans"];
 
 elseif getos()=="Darwin" then //Mac
 	third_dir = path_builder+filesep()+'..'+filesep()+'..'+filesep()+'thirdparty';
@@ -59,7 +58,7 @@ else//LINUX
 
     C_Flags = ["-I"+inc_base_dir];
 
-		Linker_Flag = ["-L" + lib_base_dir + " -ltrans -Wl,-rpath="+lib_base_dir]
+		Linker_Flag = ["-L" + lib_base_dir + " -lmul -Wl,-rpath="+lib_base_dir]
 
 		libs = [];
 
